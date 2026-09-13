@@ -17,6 +17,7 @@
 #include <linux/touchscreen_mmi_nvt.h>
 #include <linux/of.h>
 #include <linux/slab.h>
+#include <drm/drm_of.h>
 
 static ssize_t ts_mmi_panel_supplier_show(struct device *dev,
 		struct device_attribute *attr, char *buf)
