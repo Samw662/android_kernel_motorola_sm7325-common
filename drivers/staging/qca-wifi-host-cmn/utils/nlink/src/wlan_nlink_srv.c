@@ -28,6 +28,9 @@
 #include <linux/module.h>
 #include <linux/init.h>
 #include <linux/netdevice.h>
+
+static void *nl80211hdr_put(struct sk_buff *skb, uint32_t portid,
+		     uint32_t seq, int flags, uint8_t cmd);
 #include <linux/netlink.h>
 #include <linux/skbuff.h>
 #include <net/sock.h>
@@ -341,7 +344,7 @@ int nl_srv_unregister(tWlanNlModTypes msg_type, nl_srv_msg_callback msg_handler)
 	return 0;
 }
 
-void *nl80211hdr_put(struct sk_buff *skb, uint32_t portid,
+static void *nl80211hdr_put(struct sk_buff *skb, uint32_t portid,
 		     uint32_t seq, int flags, uint8_t cmd)
 {
 	struct genl_family *cld80211_fam = cld80211_get_genl_family();
