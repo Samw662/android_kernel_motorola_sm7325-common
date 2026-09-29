@@ -33,7 +33,7 @@
 #define devm_gpio_free(a, b) NULL
 #endif
 
-struct FPS_data {
+static struct FPS_data {
 	unsigned int enabled;
 	unsigned int state;
 	struct blocking_notifier_head nhead;
@@ -95,7 +95,7 @@ int FPS_unregister_notifier(struct notifier_block *nb,
 }
 EXPORT_SYMBOL_GPL(FPS_unregister_notifier);
 
-void FPS_notify(unsigned long stype, int state)
+static void FPS_notify(unsigned long stype, int state)
 {
 	struct FPS_data *mdata = fpsData;
 

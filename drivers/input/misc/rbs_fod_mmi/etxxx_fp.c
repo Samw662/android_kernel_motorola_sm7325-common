@@ -64,7 +64,7 @@
 #include <linux/mmi_relay.h>
 #endif
 #ifdef MMI_RELAY_MODULE
-struct FPS_data {
+static struct FPS_data {
 	unsigned int enabled;
 	unsigned int state;
 	struct notifier_block   relay_notif;
@@ -179,7 +179,7 @@ static struct FPS_data *FPS_init(void)
 	return mdata;
 }
 
-void FPS_notify(unsigned long stype, int state)
+static void FPS_notify(unsigned long stype, int state)
 {
 	struct FPS_data *mdata = fpsData;
 	int ret =0;
