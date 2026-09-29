@@ -2,4 +2,5 @@
 EXTRA_CFLAGS += -Wall
 EXTRA_CFLAGS += -I$(ANDROID_BUILD_TOP)/motorola/kernel/modules/include
 
-obj-m += mmi_annotate.o
+CONFIG_MMI_ANNOTATE ?= y
+obj-$(CONFIG_MMI_ANNOTATE) += mmi_annotate.o
