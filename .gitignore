@@ -154,3 +154,10 @@ arch/arm/boot/dts/vendor
 #Ignoring Android.bp link file
 #
 Android.bp
+
+#
+# Local build tooling and build artifacts (never in the tree)
+#
+/build_ram.sh
+/out_*/
+/weary_*.log
